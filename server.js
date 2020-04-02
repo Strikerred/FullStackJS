@@ -1,12 +1,12 @@
 var express = require("express")
 var path = require("path")
-var bodyParser = require("bodyParser")
+var bodyParser = require("body-parser")
 
 var speakers = require("./routes/speakers")
 var dotenv = require("dotenv")
 var path = require("path")
 
-var mongooe = require("mongoose")
+var mongoose = require("mongoose")
 
 var app = express()
 
