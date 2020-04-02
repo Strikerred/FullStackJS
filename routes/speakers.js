@@ -70,3 +70,5 @@ router.delete("/speakers/:id", (res,req, next) => {
         res.json({message: "Successfully deleted speaker"})
     })
 })
+
+module.exports = router
