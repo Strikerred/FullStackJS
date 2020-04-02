@@ -3,9 +3,9 @@ services:
   app:
     container_name: FullStackJS
     restart: always
-    build: .
+    build: ./FullStackJS
     ports:
-      - '8888:3000'
+      - '9000:3000'
     links:
       - mongo
     environment:
@@ -14,7 +14,13 @@ services:
       PORT: 3000
 
   mongo:
-    container_name: mongo
-    image: mongo:4.1.6
+    container_name: speakers
+    image: mongo:4.0.11
     ports:
       - '27017:27017'
+  
+  blazor:
+    container_name: BlazorFrontEnd
+    build: ./BlazorFrontEnd
+    ports:
+      - '8080:80'

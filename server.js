@@ -2,6 +2,7 @@ var express = require("express")
 var path = require("path")
 var bodyParser = require("body-parser")
 
+var index = require("./routes/index")
 var speakers = require("./routes/speakers")
 var dotenv = require("dotenv")
 var path = require("path")
@@ -25,6 +26,7 @@ app.use(express.static(path.join(__dirname, "client")))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 
+app.use("/", index)
 app.use("/api", speakers)
 
 app.listen(port, function (){
