@@ -25,7 +25,7 @@ router.post("/speakers", (req, res, next) => {
 
     console.log(speaker)
 
-    if(!speaker._id        || !speaker.firstName || !speaker.lastName || !speaker.email || 
+    if(!speaker.firstName || !speaker.lastName || !speaker.email || 
        !speaker.area      || !speaker.city     || !speaker.province  || 
        !speaker.employer  || !speaker.mobileNumber){
         res.status(400)
