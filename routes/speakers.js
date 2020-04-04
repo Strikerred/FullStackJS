@@ -22,14 +22,18 @@ router.get("/speakers/:id", (req, res, next) => {
 //create new speaker
 router.post("/speakers", (req, res, next) => {
     var speaker = req.body
-    if(!speaker.FirstName || !speaker.LastName || !speaker.Email || 
-       !speaker.Area      || !speaker.City     || !speaker.Province || 
-       !speaker.Employer  || !speaker.MobileNumber){
+
+    console.log(speaker)
+
+    if(!speaker._id        || !speaker.firstName || !speaker.lastName || !speaker.email || 
+       !speaker.area      || !speaker.city     || !speaker.province  || 
+       !speaker.employer  || !speaker.mobileNumber){
         res.status(400)
         res.json({"error" : "The speaker could not be inserted into the database" })
     }
     else{
         let newSpeaker = new MongooseSpeakerModel(speaker)
+        console.log(newSpeaker)
 
         newSpeaker.save((err, data) => {
             if (err) res.send(err)

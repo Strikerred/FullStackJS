@@ -2,35 +2,38 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
 const speakerSchema = new Schema({
-    FirstName : {
+    _id:{
+        type: String
+    },
+    firstName : {
         type: String,
         required: true
     },
-    LastName : {
+    lastName : {
         type: String,
         required: true
     },
-    Email:{
+    email:{
         type: String,
         required: true
     },
-    MobileNumber:{
+    area:{
         type: String,
         required: true
     },
-    Area:{
+    city:{
         type: String,
         required: true
     },
-    City:{
+    province: {
         type: String,
         required: true
     },
-    Province: {
+    employer:{
         type: String,
         required: true
     },
-    Employer:{
+    mobileNumber:{
         type: String,
         required: true
     }
